@@ -1,0 +1,143 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.subSection .description {
+    font-size: 1.15em;
+    margin-bottom: 20px;
+}
+
+.subSection .description em {
+    color: #BF3759;
+}
+
+.subSection .links {
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.subSection .links li {
+    margin-bottom: 4px;
+}
+
+.subSection .links li a {
+    color: #428bca;
+}
+
+.subSection .links li a .linkMapText {
+    color: #CCC;
+    font-style: italic;
+}
+
+.subSection .links li a:visited {
+    color: #666;
+}
+
+.subSection .links .glyphicon {
+    margin-right: 4px;
+    padding: 2px;
+}
+
+.subSection .panel-heading {
+    cursor: pointer;
+    background-color: #E8F1F7;
+}
+
+.subSection .panel-title {
+    color: #555;
+    text-shadow: 1px 1px 1px #C5C4C4;
+}
+
+.subSection .panel-title span {
+    margin-right: 10px;
+}
+
+.subSection .panel-body {
+    background-color: #F7F5F5;
+    opacity: 0.96;
+}
+
+.subSection .fnName {
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 1px 1px 1px #333;
+}
+
+.subSection .fnName .glyphicon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.subSection .checkbox {
+    margin-left: 20px;
+}
+
+.subSection .checkboxLabel + .checkbox {
+    margin-left: 10px;
+}
+
+.subSection .checkboxLabel {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-top: 1px;
+    margin-left: 20px;
+    font-weight: bold;
+    color: #484848;
+}
+
+div.hljs-source pre {
+    padding: 0px;
+}
+
+div.hljs-source pre code {
+    padding-left: 10px;
+}
+
+ /* style="height: calc(100vh - 90px); display: flex; align-items: center; justify-content: center; padding: 40px;" */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 90px);
+    padding: 40px;
+    opacity: .90;
+}
+
+.linksGroup h3 {
+    color: #95B3D2;
+}
+
+.linksGroup {
+    margin-bottom: 30px;
+}
+
+.linksGroup a {
+    display: table;
+    font-size: 1.2em;
+    color: #428bca;
+}
+
+.linksGroup a .linkMapText {
+    color: #CCC;
+    font-style: italic;
+}
+
+.linksGroup a:visited {
+    color: #666;
+}
+
+.linksGroup .glyphicon {
+    margin-right: 4px;
+    padding: 2px;
+}
+
+.linksGroup ul {
+    list-style-position: inside;
+    padding: 4px;
+}
+
+.linksGroup ul li {
+    font-size: 1.1em;
+}

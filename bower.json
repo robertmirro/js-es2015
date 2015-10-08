@@ -1,0 +1,30 @@
+{
+  "name": "js-es2015",
+  "version": "0.0.0",
+  "homepage": "https://github.com/robertmirro/js-es2015",
+  "authors": [
+    "robertmirro <rmirro@evolenthealth.com>"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.0",
+    "jquery": "~2.2.0",
+    "angular-ui-router": "~0.2.18",
+    "bootstrap": "3.3.4",
+    "angular-highlightjs": "~0.5.1",
+    "angular-animate": "~1.5.0",
+    "angular-bootstrap": "~1.1.2",
+    "angular-sanitize": "~1.5.0",
+    "fontawesome": "~4.5.0"
+  }
+}

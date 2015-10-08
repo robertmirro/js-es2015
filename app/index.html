@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html ng-app="es2015">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ES2015 / ES6 Basics</title>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="styles/dashboard.css" />
+    <link rel="stylesheet" href="styles/app.css" />
+    <link rel="stylesheet" href="styles/hybrid.css" />
+    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="styles/awesome-bootstrap-checkbox.css" />
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ui-sref="home" href="#">ES2015 / ES6 Basics</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a ui-sref="links" href="#">Links</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid ng-cloak" ng-controller="appController as vm">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li ui-sref-active="active" ng-class="{disabled: !section.isEnabled}" ng-repeat="section in vm.sectionsList">
+                        <a ui-sref="{{section.name}}" href="#">{{section.navigationLinkText}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/highlight.pack.js"></script>
+
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular-highlightjs/build/angular-highlightjs.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <!-- endbower -->
+
+    <!-- script tags - start -->
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/globalVarVsLetConst.js"></script>
+    <script type="text/javascript" src="scripts/sectionLinkDirective.js"></script>
+    <script type="text/javascript" src="scripts/sections/arrays.js"></script>
+    <script type="text/javascript" src="scripts/sections/arrowFunctions.js"></script>
+    <script type="text/javascript" src="scripts/sections/blockScoping.js"></script>
+    <script type="text/javascript" src="scripts/sections/defaultParameters.js"></script>
+    <script type="text/javascript" src="scripts/sections/destructuringAssignment.js"></script>
+    <script type="text/javascript" src="scripts/sections/numbers.js"></script>
+    <script type="text/javascript" src="scripts/sections/objectLiterals.js"></script>
+    <script type="text/javascript" src="scripts/sections/objects.js"></script>
+    <script type="text/javascript" src="scripts/sections/strings.js"></script>
+    <script type="text/javascript" src="scripts/sections/templateLiterals.js"></script>
+    <script type="text/javascript" src="scripts/sectionsProvider.js"></script>
+    <script type="text/javascript" src="scripts/subSectionsListDirective.js"></script>
+    <!-- script tags - end -->
+
+    <script type="text/ng-template" id="home.html">
+        <div class="home">
+            <svg version="1.1" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 350 500">
+                <title>ES2015 / ES6</title>
+                <text transform="matrix(1 0 0 1 6 430)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="50" style="filter: url(#shadow); fill: #CCC">ES2015 / ES6</text>
+                <text transform="matrix(1 0 0 1 6 430)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="50">ES2015 / ES6</text>
+                <g>
+                    <path fill="#D6BA32" d="M29.672,332.906L0,0h326.391l-29.672,332.906l-133.885,37.633" />
+                    <path fill="#FFDA3E" d="M163.558,344.076l107.831-29.673l25.33-285.141H163.558V344.076z" />
+                    <path fill="#FFFFFF" d="M292.096,85.146" />
+                    <polygon fill="#EBEBEB" points="118.415,71.82 118.415,242.706 55.248,225.11 55.248,263.216 149.997,289.606 149.997,71.82" />
+                    <polygon fill="#FFFFFF" points="276.936,109.926 280.25,71.82 176.389,71.82 176.389,213.309 241.211,201.71 239.555,234.647 176.389,251.413 176.389,289.518 264.512,266.439 272.795,160.414 207.971,168.404 207.971,109.926" />
+                </g>
+                <defs>
+                    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="2 2" result="shadow" />
+                        <feOffset dx="5" dy="5" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="links.html">
+        <h2 class="page-header">Links</h2>
+        <div class="linksGroup">
+            <h3>Browser Setup and Configuration</h3>
+            <section-link link-text="Google Canary (nightly build that runs in parallel with other Chrome browsers)" link-url="https://www.google.com/chrome/browser/canary.html?platform=win64"></section-link>
+            <section-link link-text="Chrome Release Channels (Canary, Dev, Beta and Stable)" link-url="https://www.chromium.org/getting-involved/dev-channel"></section-link>
+        </div>
+        <div class="linksGroup">
+            <h3>Enable Experimental ES6 Features in Chrome</h3>
+            <ul>
+                <li>Copy/paste the following url into the chrome address bar: <strong>chrome://flags/#enable-javascript-harmony</strong></li>
+                <li>Choose the "<strong>Enable</strong>" link to activate this flag. (if a "Disable" link is displayed, this flag is already enabled)</li>
+            </ul>
+        </div>
+        <div class="linksGroup">
+            <h3>Browser Support</h3>
+            <section-link link-text="ECMAScript 6 Compatibility Table" link-url="http://kangax.github.io/compat-table/es6/"></section-link>
+            <section-link link-text="Chrome Platform ES6 Status" link-url="https://www.chromestatus.com/features#es6"></section-link>
+            <section-link link-text="Firefox ECMAScript 6 Support" link-url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla"></section-link>
+        </div>
+        <div class="linksGroup">
+            <h3>Resources - Books</h3>
+            <section-link link-text="Exploring ES6" link-url="http://exploringjs.com/es6/" link-map="{linkText: 'Dr. Axel Rauschmayer'}"></section-link>
+            <section-link link-text="Setting up ES6" link-url="https://leanpub.com/setting-up-es6/read" link-map="{linkText: 'Dr. Axel Rauschmayer'}"></section-link>
+            <section-link link-text="Understanding ECMAScript 6" link-url="https://leanpub.com/understandinges6/read/" link-map="{linkText: 'Nicholas C. Zakas'}"></section-link>
+            <section-link link-text="You Don't Know JS: ES6 & Beyond" link-url="https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond" link-map="{linkText: 'Kyle Simpson'}"></section-link>
+        </div>
+        <div class="linksGroup">
+            <h3>Resources - Articles and Samples</h3>
+            <section-link link-text="Babel - ECMAScript 2015 Features" link-url="https://babeljs.io/docs/learn-es2015/#ecmascript-2015-features"></section-link>
+            <section-link link-text="Mozilla Hacks - ES6 In Depth - An Introduction" link-url="https://hacks.mozilla.org/2015/04/es6-in-depth-an-introduction/"></section-link>
+            <section-link link-text="Mozilla Hacks - ES6 In Depth" link-url="https://hacks.mozilla.org/category/es6-in-depth/"></section-link>
+            <section-link link-text="PonyFoo - ES6 In Depth - Overview in 350 Bullet Points" link-url="https://ponyfoo.com/articles/es6"></section-link>
+            <section-link link-text="PonyFoo - ES6 In Depth" link-url="https://ponyfoo.com/articles/tagged/es6-in-depth"></section-link>
+            <section-link link-text="DrkSephy - ES6 Cheat Sheet" link-url="https://github.com/DrkSephy/es6-cheatsheet#es6-cheatsheet"></section-link>
+            <section-link link-text="Chrome Platform ES6 Samples" link-url="https://www.chromestatus.com/samples#es6"></section-link>
+        </div>
+        <div class="linksGroup">
+            <h3>Try in the Browser</h3>
+            <section-link link-text="Babel REPL" link-url="http://babeljs.io/repl/"></section-link>
+            <section-link link-text="ES6Fiddle Examples and REPL" link-url="http://www.es6fiddle.net/"></section-link>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="subSectionsList.html">
+        <div class="subSection">
+            <h2 class="page-header">{{$ctrl.section.headerText}}</h2>
+            <div class="description" ng-bind-html="$ctrl.section.description"></div>
+            <ul class="links" ng-if="$ctrl.section.links.length">
+                <li ng-repeat="link in $ctrl.section.links">
+                    <section-link link-text="{{link.linkText}}" link-url="{{link.linkUrl}}" link-map="link.linkMap"></section-link>
+                </li>
+            </ul>
+            <uib-accordion close-others="true">
+                <uib-accordion-group
+                    template-url="subSectionAccordionTemplate.html"
+                    heading="{{$index + 1}}. {{subSection.title}}"
+                    ng-repeat="subSection in $ctrl.subSections"
+                    >
+                    <div hljs source="$ctrl[subSection.fn.name]" language="javascript" class="hljs-source"></div>
+                    <button type="button" class="btn btn-primary fnName" ng-click="$ctrl.invokeFn(subSection.fn, subSection.fnFormatted)" title="Invoke the function">
+                        <span class="pull-left glyphicon glyphicon-play"></span>
+                        <span>{{subSection.fn.name}}</span>()
+                    </button>
+                    <div class="checkbox checkbox-primary checkbox-inline" title="Clear the console before invoking the function">
+                        <input type="checkbox" id="clearConsole" ng-model="$ctrl.invokeOptions.clearConsole">
+                        <label for="clearConsole">Clear Console</label>
+                    </div>
+                    <div class="checkboxLabel">Debugger:</div>
+                    <div class="checkbox checkbox-primary checkbox-inline" title="Instantiate the debugger before invoking the function and then step into the function">
+                        <input type="checkbox" id="launchDebugger" ng-model="$ctrl.invokeOptions.debugger.launch" ng-click="$ctrl.invokeOptions.debugger.inject = false">
+                        <label for="launchDebugger">Launch</label>
+                    </div>
+                    <div class="checkbox checkbox-primary checkbox-inline" ng-if="$ctrl.invokeOptions.debugger.launch" title="Inject the debugger directly into the function and then instantiate it after invoking the function">
+                        <input type="checkbox" id="injectDebugger" ng-model="$ctrl.invokeOptions.debugger.inject">
+                        <label for="injectDebugger">Inject</label>
+                    </div>
+                </uib-accordion-group>
+            </uib-accordion>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="subSectionAccordionTemplate.html">
+        <div class="panel panel-default">
+            <div class="panel-heading" ng-click="toggleOpen()">
+                <h4 class="panel-title">
+                    <span class="pull-left glyphicon" ng-class="{'glyphicon-chevron-down': isOpen, 'glyphicon-chevron-right': !isOpen}"></span>
+                    <span ng-bind-html="heading"></span>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" uib-collapse="!isOpen">
+                <div class="panel-body" ng-transclude></div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="es6Source">
+        {{subSection.fn.toString()}}
+    </script>
+</body>
+</html>
+
+
