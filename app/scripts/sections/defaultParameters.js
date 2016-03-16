@@ -16,12 +16,8 @@
             sections.subSection(parameterFunctions, 'Using functions to populate default parameter values')
         ];
 
-        var paramsLog = function(header, height, width, length) {
-            console.log('<%s>', header.toUpperCase());
-            console.log('height:', height);
-            console.log('width:', width);
-            console.log('length:', length);
-            console.log('');
+        var paramsLog = function(header, index, height, width, length) {
+            console.log(`${header} [${index}]: height:(${height}) width:(${width}) length:(${length})`)
         };
 
         function es5ManualIndividual() {
@@ -31,7 +27,7 @@
                 width = width !== undefined ? width : 2;
                 length = length !== undefined ? length : 3;
 
-                paramsLog(`individual parameters (${index}):`, height, width, length);
+                paramsLog(`individual parameters`, index, height, width, length);
             }
 
             individual();
@@ -52,7 +48,7 @@
                 options.width = options.width !== undefined ? options.width : 2;
                 options.length = options.length !== undefined ? options.length : 3;
 
-                paramsLog(`options object parameters (${index}):`, options.height, options.width, options.length);
+                paramsLog(`options object parameters`, index, options.height, options.width, options.length);
             }
 
             optionsObject();
@@ -88,7 +84,7 @@
 
         function individualDefaultParams() {
             function individual(index = 0, height = 1, width = 2, length = 3) {
-                paramsLog(`individual default parameters (${index}):`, height, width, length);
+                paramsLog(`individual default parameters`, index, height, width, length);
             }
 
             individual();
@@ -107,7 +103,7 @@
                 width = 2,
                 length = 3
             } = {}) {
-                paramsLog(`options object default parameters (${index}):`, height, width, length);
+                paramsLog(`options object default parameters`, index, height, width, length);
             }
 
             optionsObject();
@@ -147,7 +143,7 @@
                 width: w = 2,
                 length: l = 3
             } = {}) {
-                paramsLog(`renamed options object default parameters (${index}):`, h, w, l);
+                paramsLog(`renamed options object default parameters`, index, h, w, l);
             }
 
             optionsObject();
@@ -183,7 +179,7 @@
 
         function parameterDependency() {
             function dependency(index = 0, x = 1, y = x * 2, z = y + 4) {
-                paramsLog(`dependency default parameters (${index}):`, x, y, z);
+                paramsLog(`dependency default parameters`, index, x, y, z);
             }
 
             dependency();
@@ -203,7 +199,7 @@
             let fnValue = value => value + 8;
 
             function parameterFn(index = 0, x = 1, y = x * 2, z = fnValue(y)) {
-                paramsLog(`function value default parameters (${index}):`, x, y, z);
+                paramsLog(`function value default parameter`, index, x, y, z);
             }
 
             parameterFn();

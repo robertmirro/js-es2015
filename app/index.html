@@ -1,22 +1,26 @@
+(
 <!DOCTYPE html>
 <html ng-app="es2015">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>ES2015 / ES6 Basics</title>
 
+    <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css" />
     <!-- endbower -->
+    <!-- endbuild -->
 
     <link rel="stylesheet" href="styles/dashboard.css" />
     <link rel="stylesheet" href="styles/app.css" />
     <link rel="stylesheet" href="styles/hybrid.css" />
-    <link rel="stylesheet" href="../bower_components/fontawesome/css/font-awesome.css" />
     <link rel="stylesheet" href="styles/awesome-bootstrap-checkbox.css" />
 </head>
+
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
@@ -36,7 +40,6 @@
             </div>
         </div>
     </nav>
-
     <div class="container-fluid ng-cloak" ng-controller="appController as vm">
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
@@ -54,6 +57,7 @@
 
     <script src="scripts/highlight.pack.js"></script>
 
+    <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
@@ -64,23 +68,24 @@
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <!-- endbower -->
+    <!-- endbuild -->
 
     <!-- script tags - start -->
-    <script type="text/javascript" src="scripts/app.js"></script>
-    <script type="text/javascript" src="scripts/globalVarVsLetConst.js"></script>
-    <script type="text/javascript" src="scripts/sectionLinkDirective.js"></script>
-    <script type="text/javascript" src="scripts/sections/arrays.js"></script>
-    <script type="text/javascript" src="scripts/sections/arrowFunctions.js"></script>
-    <script type="text/javascript" src="scripts/sections/blockScoping.js"></script>
-    <script type="text/javascript" src="scripts/sections/defaultParameters.js"></script>
-    <script type="text/javascript" src="scripts/sections/destructuringAssignment.js"></script>
-    <script type="text/javascript" src="scripts/sections/numbers.js"></script>
-    <script type="text/javascript" src="scripts/sections/objectLiterals.js"></script>
-    <script type="text/javascript" src="scripts/sections/objects.js"></script>
-    <script type="text/javascript" src="scripts/sections/strings.js"></script>
-    <script type="text/javascript" src="scripts/sections/templateLiterals.js"></script>
-    <script type="text/javascript" src="scripts/sectionsProvider.js"></script>
-    <script type="text/javascript" src="scripts/subSectionsListDirective.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/globalVarVsLetConst.js"></script>
+    <script src="scripts/sectionLinkDirective.js"></script>
+    <script src="scripts/sections/arrays.js"></script>
+    <script src="scripts/sections/arrowFunctions.js"></script>
+    <script src="scripts/sections/blockScoping.js"></script>
+    <script src="scripts/sections/defaultParameters.js"></script>
+    <script src="scripts/sections/destructuringAssignment.js"></script>
+    <script src="scripts/sections/numbers.js"></script>
+    <script src="scripts/sections/objectLiterals.js"></script>
+    <script src="scripts/sections/objects.js"></script>
+    <script src="scripts/sections/strings.js"></script>
+    <script src="scripts/sections/templateLiterals.js"></script>
+    <script src="scripts/sectionsProvider.js"></script>
+    <script src="scripts/subSectionsListDirective.js"></script>
     <!-- script tags - end -->
 
     <script type="text/ng-template" id="home.html">
@@ -105,7 +110,6 @@
             </svg>
         </div>
     </script>
-
     <script type="text/ng-template" id="links.html">
         <h2 class="page-header">Links</h2>
         <div class="linksGroup">
@@ -147,9 +151,9 @@
             <h3>Try in the Browser</h3>
             <section-link link-text="Babel REPL" link-url="http://babeljs.io/repl/"></section-link>
             <section-link link-text="ES6Fiddle Examples and REPL" link-url="http://www.es6fiddle.net/"></section-link>
+            <section-link link-text="Learn ES2015 (ES6/Harmony) Now!" link-url="http://learnharmony.org/" link-map="{linkText: 'with Renzo :-D'}"></section-link>
         </div>
     </script>
-
     <script type="text/ng-template" id="subSectionsList.html">
         <div class="subSection">
             <h2 class="page-header">{{$ctrl.section.headerText}}</h2>
@@ -160,11 +164,7 @@
                 </li>
             </ul>
             <uib-accordion close-others="true">
-                <uib-accordion-group
-                    template-url="subSectionAccordionTemplate.html"
-                    heading="{{$index + 1}}. {{subSection.title}}"
-                    ng-repeat="subSection in $ctrl.subSections"
-                    >
+                <uib-accordion-group template-url="subSectionAccordionTemplate.html" heading="{{$index + 1}}. {{subSection.title}}" ng-repeat="subSection in $ctrl.subSections">
                     <div hljs source="$ctrl[subSection.fn.name]" language="javascript" class="hljs-source"></div>
                     <button type="button" class="btn btn-primary fnName" ng-click="$ctrl.invokeFn(subSection.fn, subSection.fnFormatted)" title="Invoke the function">
                         <span class="pull-left glyphicon glyphicon-play"></span>
@@ -187,7 +187,6 @@
             </uib-accordion>
         </div>
     </script>
-
     <script type="text/ng-template" id="subSectionAccordionTemplate.html">
         <div class="panel panel-default">
             <div class="panel-heading" ng-click="toggleOpen()">
@@ -201,11 +200,9 @@
             </div>
         </div>
     </script>
-
     <script type="text/ng-template" id="es6Source">
         {{subSection.fn.toString()}}
     </script>
 </body>
+
 </html>
-
-
