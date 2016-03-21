@@ -62,7 +62,7 @@
             };
             let optionalBracketsSingleStatement = () => `Bracket notation is optional (i.e., concise body) when there is a single statement/expression, return is implied`;
 
-            // returning an object literal from a concise body requires that the object be wrapped in paranthesis to avoid a syntax error
+            // returning an object literal from a concise body requires that the object be wrapped in parenthesis to avoid a syntax error
             let returnObjectLiteral = () => ({
                 property: 'value'
             });
@@ -87,6 +87,8 @@
 
         function es5FunctionThisIssues() {
             function O() {
+                var self = this;
+
                 this.name = 'Ben Dover';
                 this.standardThis = function() {
                     return this ? this.name : undefined;
@@ -104,7 +106,6 @@
                     });
                 };
                 this.asyncSelfThis = function(reference, blankLine) {
-                    var self = this;
                     $timeout(function() {
                         console.log('asyncSelfThis (%s reference) name: %s%s',
                             reference,
@@ -127,7 +128,10 @@
             console.log('standardThis (only fn reference and fn.bind) name: %s\n\n', standardThis.bind(o)());
 
             console.log('boundThis (object.fn reference) name:', o.boundThis());
-            console.log('boundThis (only fn reference) name: %s\n\n', boundThis());
+            console.log('boundThis (only fn reference) name: %s', boundThis());
+            console.log('boundThis (only fn reference) name: %s\n\n', boundThis.call({
+                name: 'Hugh Janus'
+            }));
 
             o.asyncThis('object.fn');
             asyncThis('only fn', true);
@@ -140,9 +144,18 @@
             function O() {
                 this.name = 'Ilene Dover';
                 this.standardThis = () => this.name;
-                this.asyncThis = function(reference, blankLine) {
+                this.asyncThisArrow = (reference, blankLine) => {
                     $timeout(() => {
-                        console.log('asyncThis (%s reference) name: %s%s',
+                        console.log('asyncThisArrow (%s reference) name: %s%s',
+                            reference,
+                            this ? this.name : undefined,
+                            blankLine ? '\n\n' : ''
+                        );
+                    });
+                };
+                this.asyncThisFn = function(reference, blankLine) {
+                    $timeout(() => {
+                        console.log('asyncThisFn (%s reference) name: %s%s',
                             reference,
                             this ? this.name : undefined,
                             blankLine ? '\n\n' : ''
@@ -153,13 +166,17 @@
 
             var o = new O();
             var standardThis = o.standardThis;
-            var asyncThis = o.asyncThis;
+            var asyncThisArrow = o.asyncThisArrow;
+            var asyncThisFn = o.asyncThisFn;
 
             console.log('standardThis (object.fn reference) name:', o.standardThis());
             console.log('standardThis (only fn reference) name: %s\n\n', standardThis());
 
-            o.asyncThis('object.fn');
-            asyncThis('only fn', true);
+            o.asyncThisArrow('object.fn');
+            asyncThisArrow('only fn', true);
+
+            o.asyncThisFn('object.fn');
+            asyncThisFn('only fn', true);
         }
     }
 })();
