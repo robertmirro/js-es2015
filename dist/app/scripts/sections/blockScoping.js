@@ -36,7 +36,7 @@
                 var outerFunctionVar = 'outer function scoped var redefined as inner function scoped var value';
                 var innerFunctionVar = 'soley inner function scoped var value';
 
-                // var variables defined within a function scope their values to that function block regardless of same-named var varialbes defined in the outer context
+                // var variables defined within a function scope their values to that function block regardless of same-named var variables defined in the outer context
                 console.log('globalVar:', globalVar);
                 console.log('outerFunctionVar:', outerFunctionVar);
                 console.log('innerFunctionVar:', innerFunctionVar);
@@ -98,18 +98,20 @@
                 console.log('let (outer):', letValue);
                 console.log('const (outer):', constValue);
 
-                {
+                if (true) {
                     // variables redefined and populated at inner level
                     let letValue = 'inner';
                     const constValue = 'inner';
                     console.log('\tlet (inner):', letValue);
                     console.log('\tconst (inner):', constValue);
 
-                    {
+                    do {
+                        let letAnotherValue = 'an inner, inner block';
+
                         // don't redefine let variable, only repopulate it at deep inner level (cannot reassign/repopulate a const variable)
                         letValue = 'deep inner';
                         console.log('\t\tlet (deep inner):', letValue);
-                    }
+                    } while (false);
 
                     console.log('\tlet (inner - uh oh):', letValue);
                     console.log('\tconst (inner):', constValue);

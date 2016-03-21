@@ -135,7 +135,7 @@
             <h3>Try in the Browser</h3>
             <section-link link-text="Babel REPL" link-url="http://babeljs.io/repl/"></section-link>
             <section-link link-text="ES6Fiddle Examples and REPL" link-url="http://www.es6fiddle.net/"></section-link>
-            <section-link link-text="Learn ES2015 (ES6/Harmony) Now!" link-url="http://learnharmony.org/" link-map="{linkText: 'with Renzo :-D'}"></section-link>
+            <section-link link-text="Learn ES2015 (ES6/Harmony) Now!" link-url="http://learnharmony.org/"></section-link>
         </div>
     </script>
     <script type="text/ng-template" id="subSectionsList.html">
@@ -158,14 +158,9 @@
                         <input type="checkbox" id="clearConsole" ng-model="$ctrl.invokeOptions.clearConsole">
                         <label for="clearConsole">Clear Console</label>
                     </div>
-                    <div class="checkboxLabel">Debugger:</div>
                     <div class="checkbox checkbox-primary checkbox-inline" title="Instantiate the debugger before invoking the function and then step into the function">
-                        <input type="checkbox" id="launchDebugger" ng-model="$ctrl.invokeOptions.debugger.launch" ng-click="$ctrl.invokeOptions.debugger.inject = false">
-                        <label for="launchDebugger">Launch</label>
-                    </div>
-                    <div class="checkbox checkbox-primary checkbox-inline" ng-if="$ctrl.invokeOptions.debugger.launch" title="Inject the debugger directly into the function and then instantiate it after invoking the function">
-                        <input type="checkbox" id="injectDebugger" ng-model="$ctrl.invokeOptions.debugger.inject">
-                        <label for="injectDebugger">Inject</label>
+                        <input type="checkbox" id="launchDebugger" ng-model="$ctrl.invokeOptions.debugger.launch">
+                        <label for="launchDebugger">Launch Debugger</label>
                     </div>
                 </uib-accordion-group>
             </uib-accordion>
