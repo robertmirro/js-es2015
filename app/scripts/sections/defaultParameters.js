@@ -52,7 +52,7 @@
             }
 
             optionsObject();
-            optionsObject(1);
+            optionsObject(1, {});
             optionsObject(2, {
                 height: 1
             });
@@ -88,7 +88,7 @@
             }
 
             individual();
-            individual(1);
+            individual(1, {});
             individual(2, 1);
             individual(3, 1, 2);
             individual(4, 1, 2, 3);
@@ -107,7 +107,7 @@
             }
 
             optionsObject();
-            optionsObject(1);
+            optionsObject(1, {});
             optionsObject(2, {
                 height: 1
             });
@@ -147,7 +147,7 @@
             }
 
             optionsObject();
-            optionsObject(1);
+            optionsObject(1, {});
             optionsObject(2, {
                 height: 1
             });
