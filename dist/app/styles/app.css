@@ -91,6 +91,27 @@ div.main {
     color: #484848;
 }
 
+.subSection .transpile {
+    display: inline-block;
+    padding-left: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.subSection .transpile a {
+    color: #428bca;
+}
+
+.subSection .transpile a:visited {
+    color: #666;
+}
+
+.subSection .transpile .glyphicon {
+    margin-right: 6px;
+    padding: 2px;
+    font-size: 1.2em;
+}
+
 div.hljs-source pre {
     padding: 0px;
 }
