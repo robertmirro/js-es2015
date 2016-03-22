@@ -11,7 +11,8 @@
         ])
         .constant('sectionDescriptor', 'section')
         .config(appConfig)
-        .controller('appController', appController);
+        .controller('appController', appController)
+        .filter('encodeURIComponent', encodeURIComponentFilter);
 
     function appConfig($urlRouterProvider, $stateProvider, sectionDescriptor, sectionsProvider, hljsServiceProvider) {
         $urlRouterProvider.otherwise('/');
@@ -56,5 +57,9 @@
 
     function appController(sections) {
         this.sectionsList = sections.list;
+    }
+
+    function encodeURIComponentFilter($window) {
+        return $window.encodeURIComponent;
     }
 })();

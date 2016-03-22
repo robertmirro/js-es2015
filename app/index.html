@@ -1,4 +1,3 @@
-(
 <!DOCTYPE html>
 <html ng-app="es2015">
 
@@ -178,6 +177,9 @@
                         <input type="checkbox" id="launchDebugger" ng-model="$ctrl.invokeOptions.debugger.launch">
                         <label for="launchDebugger">Launch Debugger</label>
                     </div>
+                    <div class="transpile" title="View transpiled source on Babel">
+                        <a ng-href="https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code={{subSection.fnFormatted | encodeURIComponent}}" target="_blank"><span class="glyphicon glyphicon-random pull-left"></span> Transpile</a>
+                    </div>
                 </uib-accordion-group>
             </uib-accordion>
         </div>
@@ -194,9 +196,6 @@
                 <div class="panel-body" ng-transclude></div>
             </div>
         </div>
-    </script>
-    <script type="text/ng-template" id="es6Source">
-        {{subSection.fn.toString()}}
     </script>
 </body>
 
