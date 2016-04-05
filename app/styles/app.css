@@ -103,7 +103,7 @@ div.main {
 }
 
 .subSection .transpile a:visited {
-    color: #666;
+    /* color: #666; */
 }
 
 .subSection .transpile .glyphicon {

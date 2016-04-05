@@ -16,7 +16,8 @@
             ['ejs', 'Exploring JS', 'http://exploringjs.com/es6/'],
             ['uecmas6', 'Understanding ECMAScript 6', 'https://leanpub.com/understandinges6/read/#leanpub-auto-'],
             ['ydkjs', 'You Dont Know JS', 'https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20%26%20beyond/'],
-            ['es6cs', 'ES6 Cheat Sheet', 'https://github.com/DrkSephy/es6-cheatsheet']
+            ['es6cs', 'ES6 Cheat Sheet', 'https://github.com/DrkSephy/es6-cheatsheet'],
+            ['drar', '②ality - Dr. Axel Rauschmayer', 'http://www.2ality.com/']
         ]);
         invokeOptions = {
             clearConsole: true,
@@ -152,7 +153,10 @@
                         sectionLink('Destructuring for Easier Data Access', 'destructuring-for-easier-data-access', linkMap.uecmas6),
                         sectionLink('Destructuring', 'ch2.md#destructuring', linkMap.ydkjs),
                         sectionLink('Destructuring', 'ch_destructuring.html', linkMap.ejs),
-                        sectionLink('Destructuring', '#destructuring', linkMap.es6cs)
+                        sectionLink('Destructuring', '#destructuring', linkMap.es6cs),
+                        sectionLink('The destructuring algorithm in ECMAScript 6', '2015/03/destructuring-algorithm.html', linkMap.drar),
+                        sectionLink('Destructuring and parameter handling in ECMAScript 6', '2015/01/es6-destructuring.html', linkMap.drar),
+                        sectionLink('Destructuring objects as function parameters in ES6', 'http://simonsmith.io/destructuring-objects-as-function-parameters-in-es6/')
                     ]
                 );
                 section(
@@ -161,16 +165,43 @@
                     null,
                     '<em>Default function parameters</em> allow formal parameters to be initialized with default values if no value or undefined is passed.', [
                         sectionLink('Default parameters', 'Functions/Default_parameters', linkMap.mdn),
+                        sectionLink('Default Operator', 'es6-spread-and-butter-in-depth#default-operator', linkMap.pfes6id),
                         sectionLink('Functions with Default Parameter Values', 'functions-with-default-parameter-values', linkMap.uecmas6),
                         sectionLink('Default Parameter Values', 'ch2.md#default-parameter-values', linkMap.ydkjs),
                         sectionLink('Parameter default values', 'ch_parameter-handling.html#sec_parameter-default-values', linkMap.ejs),
                         sectionLink('Default Parameters', '#default-parameters', linkMap.es6cs),
-                        sectionLink('Destructuring and parameter handling in ECMAScript 6', 'http://www.2ality.com/2015/01/es6-destructuring.html'),
-                        sectionLink('Destructuring objects as function parameters in ES6', 'http://simonsmith.io/destructuring-objects-as-function-parameters-in-es6/')
+                        sectionLink('Destructuring and parameter handling in ECMAScript 6 - Parameter handling', '2015/01/es6-destructuring.html#parameter_handling', linkMap.drar),
                     ]
                 );
-                section('es6RestParameters', 'Rest Parameters', null, '', [], false);
-                section('es6SpreadOperator', 'Spread Operator', null, '', [], false);
+                section(
+                    'es6RestParameters',
+                    'Rest Parameters',
+                    null,
+                    'The <em>rest parameter</em> syntax allows us to represent an indefinite number of arguments as an array.', [
+                        sectionLink('Rest parameters', 'Functions/rest_parameters', linkMap.mdn),
+                        sectionLink('Rest parameters and defaults', '2015/05/es6-in-depth-rest-parameters-and-defaults/', linkMap.mes6id),
+                        sectionLink('Rest parameters', 'es6-spread-and-butter-in-depth#rest-parameters', linkMap.pfes6id),
+                        sectionLink('Rest Parameters', 'rest-parameters', linkMap.uecmas6),
+                        sectionLink('Spread/Rest', 'ch2.md#spreadrest', linkMap.ydkjs),
+                        sectionLink('Rest parameters', 'ch_parameter-handling.html#sec_rest-parameters', linkMap.ejs),
+                        sectionLink('Rest Parameters', '#rest-parameters', linkMap.es6cs),
+                        sectionLink('Destructuring and parameter handling in ECMAScript 6 - Rest parameters', '2015/01/es6-destructuring.html#rest_parameters', linkMap.drar),
+                    ]
+                );
+                section(
+                    'es6SpreadOperator',
+                    'Spread Operator',
+                    null,
+                    'The <em>spread operator</em> allows an expression to be expanded in places where multiple arguments (for function calls) or multiple elements (for array literals) are expected.', [
+                        sectionLink('Spread operator', 'Operators/Spread_operator', linkMap.mdn),
+                        sectionLink('Spread Operator', 'es6-spread-and-butter-in-depth#spread-operator', linkMap.pfes6id),
+                        sectionLink('The Spread Operator', 'the-spread-operator', linkMap.uecmas6),
+                        sectionLink('Spread/Rest', 'ch2.md#spreadrest', linkMap.ydkjs),
+                        sectionLink('The spread operator (...)', 'ch_parameter-handling.html#sec_spread-operator', linkMap.ejs),
+                        sectionLink('Spread Operator', '#spread-operator', linkMap.es6cs),
+                        sectionLink('Destructuring and parameter handling in ECMAScript 6 - The spread operator (...)', '2015/01/es6-destructuring.html#the_spread_operator_%28...%29', linkMap.drar),
+                    ]
+                );
                 section('es6Promises', 'Promises', null, '', [], false);
                 section('es6Modules', 'Modules', null, '', [], false);
                 section('es6Classes', 'Classes', null, '', [], false);
@@ -259,7 +290,7 @@
                     return (new Function('debugger;\n' + fnFormatted.match(/function[^{]+\{([\s\S]*)\}$/)[1]))();
                 }
 
-                console.info(''), console.info('Choose the debugger "Step Into" button twice (or choose "CTRL" + ";" twice) to step into the fn() below.'), console.info('');
+                console.log('%cChoose the debugger "Step Into" button twice (or choose "CTRL" + ";" twice) to step into fn().', 'color: #ffffff; background-color: #3b7fba; border: 1px solid #ffffff; padding: 10px; line-height: 40px; font-size: 1.1em;');
                 debugger;
                 fn();
             }

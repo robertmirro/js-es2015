@@ -81,9 +81,12 @@
     <script src="scripts/sections/numbers.js"></script>
     <script src="scripts/sections/objectLiterals.js"></script>
     <script src="scripts/sections/objects.js"></script>
+    <script src="scripts/sections/restParameters.js"></script>
+    <script src="scripts/sections/spreadOperator.js"></script>
     <script src="scripts/sections/strings.js"></script>
     <script src="scripts/sections/templateLiterals.js"></script>
     <script src="scripts/sectionsProvider.js"></script>
+    <script src="scripts/subSectionScrollIntoViewDirective.js"></script>
     <script src="scripts/subSectionsListDirective.js"></script>
     <!-- script tags - end -->
 
@@ -178,7 +181,7 @@
                         <label for="launchDebugger">Launch Debugger</label>
                     </div>
                     <div class="transpile" title="View transpiled source on Babel">
-                        <a ng-href="https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Creact%2Cstage-2&code={{subSection.fnFormatted | encodeURIComponent}}" target="_blank"><span class="glyphicon glyphicon-random pull-left"></span> Transpile</a>
+                        <a ng-href="https://babeljs.io/repl/#?evaluate=true&presets=es2015%2Cstage-2&code={{subSection.fnFormatted | encodeURIComponent}}" target="_blank"><span class="glyphicon glyphicon-random pull-left"></span> Transpile</a>
                     </div>
                 </uib-accordion-group>
             </uib-accordion>
@@ -192,7 +195,7 @@
                     <span ng-bind-html="heading"></span>
                 </h4>
             </div>
-            <div class="panel-collapse collapse" uib-collapse="!isOpen">
+            <div class="panel-collapse collapse" uib-collapse="!isOpen" sub-section-scroll-into-view="isOpen">
                 <div class="panel-body" ng-transclude></div>
             </div>
         </div>
