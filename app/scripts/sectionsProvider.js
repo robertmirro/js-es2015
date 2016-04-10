@@ -202,7 +202,23 @@
                         sectionLink('Destructuring and parameter handling in ECMAScript 6 - The spread operator (...)', '2015/01/es6-destructuring.html#the_spread_operator_%28...%29', linkMap.drar),
                     ]
                 );
-                section('es6Promises', 'Promises', null, '', [], false);
+                section(
+                    'es6Promises',
+                    'Promises',
+                    null,
+                    'The <code>Promise</code> object is used for deferred and asynchronous computations. A Promise represents an operation that hasn\'t completed yet, but is expected in the future.', [
+                        sectionLink('Destructuring assignment', 'Operators/Destructuring_assignment', linkMap.mdn),
+                        sectionLink('Destructuring', '2015/05/es6-in-depth-destructuring/', linkMap.mes6id),
+                        sectionLink('ES6 JavaScript Destructuring in Depth', 'es6-destructuring-in-depth', linkMap.pfes6id),
+                        sectionLink('Destructuring for Easier Data Access', 'destructuring-for-easier-data-access', linkMap.uecmas6),
+                        sectionLink('Destructuring', 'ch2.md#destructuring', linkMap.ydkjs),
+                        sectionLink('Destructuring', 'ch_destructuring.html', linkMap.ejs),
+                        sectionLink('Destructuring', '#destructuring', linkMap.es6cs),
+                        sectionLink('The destructuring algorithm in ECMAScript 6', '2015/03/destructuring-algorithm.html', linkMap.drar),
+                        sectionLink('Destructuring and parameter handling in ECMAScript 6', '2015/01/es6-destructuring.html', linkMap.drar),
+                        sectionLink('Destructuring objects as function parameters in ES6', 'http://simonsmith.io/destructuring-objects-as-function-parameters-in-es6/')
+                    ]
+                );
                 section('es6Modules', 'Modules', null, '', [], false);
                 section('es6Classes', 'Classes', null, '', [], false);
                 section('es6Symbols', 'Symbols', null, '', [], false);
