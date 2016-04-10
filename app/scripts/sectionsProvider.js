@@ -207,16 +207,15 @@
                     'Promises',
                     null,
                     'The <code>Promise</code> object is used for deferred and asynchronous computations. A Promise represents an operation that hasn\'t completed yet, but is expected in the future.', [
-                        sectionLink('Destructuring assignment', 'Operators/Destructuring_assignment', linkMap.mdn),
-                        sectionLink('Destructuring', '2015/05/es6-in-depth-destructuring/', linkMap.mes6id),
-                        sectionLink('ES6 JavaScript Destructuring in Depth', 'es6-destructuring-in-depth', linkMap.pfes6id),
-                        sectionLink('Destructuring for Easier Data Access', 'destructuring-for-easier-data-access', linkMap.uecmas6),
-                        sectionLink('Destructuring', 'ch2.md#destructuring', linkMap.ydkjs),
-                        sectionLink('Destructuring', 'ch_destructuring.html', linkMap.ejs),
-                        sectionLink('Destructuring', '#destructuring', linkMap.es6cs),
-                        sectionLink('The destructuring algorithm in ECMAScript 6', '2015/03/destructuring-algorithm.html', linkMap.drar),
-                        sectionLink('Destructuring and parameter handling in ECMAScript 6', '2015/01/es6-destructuring.html', linkMap.drar),
-                        sectionLink('Destructuring objects as function parameters in ES6', 'http://simonsmith.io/destructuring-objects-as-function-parameters-in-es6/')
+                        sectionLink('Promise', 'Global_Objects/Promise', linkMap.mdn),
+                        sectionLink('ES6 Promises in Depth', 'es6-promises-in-depth', linkMap.pfes6id),
+                        sectionLink('Promises', 'promises', linkMap.uecmas6),
+                        sectionLink('Promises', 'ch4.md#promises', linkMap.ydkjs),
+                        sectionLink('Promises for asynchronous programming', 'ch_promises.html', linkMap.ejs),
+                        sectionLink('Promises', '#promises', linkMap.es6cs),
+                        sectionLink('Promise-based functions should not throw exceptions', '2016/03/promise-rejections-vs-exceptions.html', linkMap.drar),
+                        sectionLink('We have a problem with promises', 'https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html'),
+                        sectionLink('Promise Patterns & Anti-Patterns', 'http://www.datchley.name/promise-patterns-anti-patterns/')
                     ]
                 );
                 section('es6Modules', 'Modules', null, '', [], false);
