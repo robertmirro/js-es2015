@@ -271,7 +271,7 @@
             var sectionObject;
 
             sectionsList.some(function(section) {
-                return section.name === $state.current.name ? !!(sectionObject = section) : false;
+                return section.name === $state.current.name && (sectionObject = section);
             });
 
             return sectionObject || {};
